@@ -2,3 +2,6 @@ name = "TableConv"
 # badges = ["travis"]
 module_maker="ModuleBuildTiny"
 
+[release]
+pause_config="./.pause"
+

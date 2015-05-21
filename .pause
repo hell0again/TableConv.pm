@@ -1,0 +1,3 @@
+upload_uri http://localhost:5888/orepan
+user orepan
+password orepan
