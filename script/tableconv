@@ -1,0 +1,29 @@
+#!/usr/bin/env perl
+
+use strict;
+use 5.008001;
+use TableConv::CLI;
+
+exit TableConv::CLI->new->run(@ARGV);
+
+__END__
+
+=head1 NAME
+
+tableconv
+
+=head1 SYNOPSIS
+
+  > tableconv conv CSV_FILE
+  > tableconv reverse XLSX_FILE
+  > tableconv reverse --file-format=unix XLSX_FILE
+
+=head1 DESCRIPTION
+
+Convert csv file to xlsx. And Also reverse converted xlsx file to csv.
+
+=head1 SEE ALSO
+
+L<TableConv>
+
+=cut

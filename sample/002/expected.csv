@@ -1,0 +1,24 @@
+key_1,key_2,val_a
+1,1,base
+<<<<<<< ours.csv
+2,1,ours
+=======
+2,1,theirs
+>>>>>>> theirs.csv
+3,1,base
+4,1,base
+<<<<<<< ours.csv
+5,0,ours
+6,0,ours
+7,0,ours
+8,0,ours
+||||||| base.csv
+8,0,base
+=======
+5,2,theirs
+6,2,theirs
+7,2,theirs
+8,2,theirs
+>>>>>>> theirs.csv
+9,2,base
+10,2,base
