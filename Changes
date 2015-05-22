@@ -2,6 +2,8 @@ Revision history for Perl extension TableConv
 
 {{$NEXT}}
 
+    - rename subcommand conv -> convert
+
 0.01 2015-05-21T06:38:38Z
 
     - original version

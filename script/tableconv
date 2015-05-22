@@ -14,7 +14,7 @@ tableconv
 
 =head1 SYNOPSIS
 
-  > tableconv conv CSV_FILE
+  > tableconv convert CSV_FILE
   > tableconv reverse XLSX_FILE
   > tableconv reverse --file-format=unix XLSX_FILE
 

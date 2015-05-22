@@ -35,14 +35,14 @@ sub run {
 		#"verbose!"  => sub { $self->verbose($_[1]) },
     );
     push(@commands, @args);
-	my $cmd = shift @commands || 'conv';
+	my $cmd = shift @commands || 'convert';
 	my $code = try {
 		#my $call = $self->can("cmd_$cmd") or die "no command";
 		my $call = "cmd_$cmd";
 		$self->$call(@commands);
 		return 0;
 	} catch {
-		die $_; 	
+		die $_;
 	};
 	return $code;
 }
@@ -70,10 +70,13 @@ sub cmd_version {
 sub cmd_usage {
 	my $self = shift;
 	$self->print(<<EOS);
-Usage tableconv 	
+Usage
+  tableconv convert CSV_FILE >XLSX_FILE
+  tableconv reverse XLSX_FILE >CSV_FILE
+  tableconv reverse --file-format=unix XLSX_FILE >CSV_FILE
 EOS
 }
-sub cmd_conv {
+sub cmd_convert {
 	my ($self, @args) = @_;
 	$self->parse_options(
 		\@args,
