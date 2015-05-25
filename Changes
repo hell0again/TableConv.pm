@@ -2,6 +2,8 @@ Revision history for Perl extension TableConv
 
 {{$NEXT}}
 
+0.02 2015-05-25T11:07:28Z
+
     - rename subcommand conv -> convert
     - add pods
     - revert supports --file-type=json
