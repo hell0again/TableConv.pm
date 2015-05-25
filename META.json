@@ -1,5 +1,5 @@
 {
-   "abstract" : "Convert csv file to xlsx. And Also reverse converted xlsx file to csv.",
+   "abstract" : "Convert csv to xlsx. Also reverse converted xlsx to csv.",
    "author" : [
       "hell0again <hell00again@gmail.com>"
    ],
@@ -72,5 +72,5 @@
          "web" : "https://github.com/hell0again/TableConv.pm"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }

@@ -26,11 +26,12 @@ sub run {
 
 	my @commands;
 	my $p = Getopt::Long::Parser->new(
-		config => [ "posix_default", "no_ignore_case", "gnu_compat" ],
+        # config => [ "posix_default", "no_ignore_case", "gnu_compat" ],
+		config => [ "gnu_compat", "no_ignore_case", "pass_through" ],
 	);
     $p->getoptionsfromarray(
         \@args,
-        "h|help"    => sub { unshift @commands, 'usage' },
+        "h|help"    => sub { unshift @commands, 'help' },
         "v|version" => sub { unshift @commands, 'version' },
 		#"verbose!"  => sub { $self->verbose($_[1]) },
     );

@@ -1,0 +1,22 @@
+=head1 NAME
+
+TableConv::Doc::Reverse - reverse convert xlsx to csv
+
+=head1 SYNOPSIS
+
+  tableconv reverse [-f|--ff|--file-format=FILE_FORMAT] xlsx_file
+
+=head1 OPTIONS
+
+=over 1
+
+=item --file-format=<unix|mac|win>
+
+By default, C<tableconv reverse> will break lines with "CR+LF".
+You can change line break characters specifying this option.
+Notice that this option do not accept escaped line break
+characters (like "\r\n", "\n"). If you want "LF", pass "--file-format=unix".
+Or you want "CR", pass "--file-format=mac".
+
+=back
+

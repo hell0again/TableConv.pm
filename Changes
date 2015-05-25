@@ -3,6 +3,7 @@ Revision history for Perl extension TableConv
 {{$NEXT}}
 
     - rename subcommand conv -> convert
+    - add pods
 
 0.01 2015-05-21T06:38:38Z
 
