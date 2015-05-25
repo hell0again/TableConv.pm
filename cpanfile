@@ -9,6 +9,7 @@ requires("File::Temp");
 requires("Spreadsheet::XLSX");
 requires("Text::CSV_XS");
 requires("Text::Iconv");
+requires("JSON");
 
 on 'test' => sub {
     requires 'Test::More', '0.98';
