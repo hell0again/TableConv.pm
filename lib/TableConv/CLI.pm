@@ -88,8 +88,17 @@ sub cmd_convert {
 }
 sub conv_with_conflicted {
     my ($self) = @_;
-    my $csv = $self->{source};
-    my $lines = File::Slurp::read_file($csv);
+    my $FH;
+    if ($self->{source}) {
+        open $FH, "<", $self->{source};
+    } else {
+        $FH = *STDIN;
+    }
+    my @b;
+    while (my $line = <$FH>) {
+        push @b, $line;
+    }
+    my $lines = join "", @b; # wants single string
     my $blocks = _parse_hunks($lines);
 
     my $tmp_prefix = "tableconv_" . "XXXXXXXX";
@@ -281,7 +290,22 @@ sub _is_single_worksheet {
 }
 sub reverse {
     my ($self) = @_;
-    my $xlsx = $self->{source};
+    my $xlsx;
+    if ($self->{source}) {
+        $xlsx = $self->{source};
+    } else {
+        my $tmp_prefix = "tableconv_" . "XXXXXXXX";
+        my $cleanup = 1;
+        my $tmp_dir = tempdir($tmp_prefix, CLEANUP => $cleanup);
+        my $tmp_path = File::Spec->catfile($tmp_dir, "temp");
+        open my $FH, ">> $tmp_path";
+        while(<STDIN>) {
+            print $FH $_;
+        }
+        close $FH;
+        $xlsx = $tmp_path;
+    }
+    $DB::single = 1;
     #my $excel = Spreadsheet::XLSX->new($xlsx, Text::Iconv->new('utf-8', "windows-1251"));
     my $excel = Spreadsheet::XLSX->new($xlsx);
     if (! $self->_is_single_worksheet($excel)) {
