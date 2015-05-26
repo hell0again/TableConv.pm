@@ -2,6 +2,8 @@
 
 TableConv - Convert csv to xlsx. Also reverse converted xlsx to csv.
 
+[![Build Status](https://travis-ci.org/hell0again/TableConv.pm.svg?branch=master)](https://travis-ci.org/hell0again/TableConv.pm)
+
 # SYNOPSIS
 
     # install
